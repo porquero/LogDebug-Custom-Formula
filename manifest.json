@@ -1,0 +1,14 @@
+{
+    "name": "LogDebug Custom Formula",
+    "description": "Custom formula to log formula data in EspoCRM log.",
+    "author": "Cristian Riffo Huez - criffoh@playasoluciones.cl",
+    "php": [
+        ">=7.3"
+    ],
+    "acceptableVersions": [
+        ">=6.1.0"
+    ],
+    "version": "0.0.3",
+    "skipBackup": true,
+    "releaseDate": "2022-11-25"
+}

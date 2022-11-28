@@ -1,0 +1,48 @@
+<?php
+
+/*
+ * This file is part of the Playa Custom Formulas - EspoCRM extension.
+ *
+ * Playa - automatizame.cl
+ * Copyright (C) 2022 Cristian Riffo Huez
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ */
+
+namespace Espo\Modules\Playa\Core\Formula\Functions\UtilGroup;
+
+use Espo\Core\Utils\Util;
+use Espo\Core\Exceptions\Error;
+
+/**
+ * Don't forget change log level to DEBUG
+ */
+class LogDebug extends \Espo\Core\Formula\Functions\Base {
+
+    public function process(\StdClass $args = null) {
+        if (!property_exists($args, 'value')) {
+            return true;
+        }
+
+        if (count($args->value) < 2) {
+            throw new Error('You have to provide parameters to LogDebug.');
+        }
+
+        $GLOBALS['log']->debug('LogDebug > alias: ' . $this->evaluate($args->value[0])
+                . ' | data:', [$this->evaluate($args->value[1])]);
+
+        return true;
+    }
+
+}

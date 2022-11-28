@@ -1,0 +1,12 @@
+{
+    "functionList": [
+        "__APPEND__",
+        {
+            "name": "util\\logDebug",
+            "insertText": "util\\logDebug(ALIAS, DATA)"
+        }
+    ],
+    "functionClassNameMap": {
+        "util\\logDebug": "Espo\\Modules\\Playa\\Core\\Formula\\Functions\\UtilGroup\\LogDebug"
+    }
+}
